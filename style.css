@@ -1,0 +1,152 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+.topbar{
+    height: 30px;
+    width: 100vw;
+    background-color: #6495ed;
+    margin-bottom: 5px;
+}
+
+h1{
+    text-align: center;
+    padding: 23px 70px 0px 70px;
+    margin: 0;
+}
+
+p{
+    text-align: center;
+    padding: 0 0 40px 0;
+    margin: 0;
+}
+.content{
+    width: 30%;
+    height: 100%;
+}
+
+.display{
+    width: 70%;
+    text-align: center;
+    height: 90vh;
+    border-left: 1px solid #d1d1d1;
+} 
+h2{
+    display: inline;
+    font-size: 20px;
+    padding-top: 12px;
+}
+
+.locations{
+    height: 8vh;
+    margin: 10px;
+    /* background-color: #dee2e6; */
+    background-color: #fbfbef;
+    padding: 3px 20px 3px 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.selectbar{
+    text-align: left;
+    display: block;
+    height: 30vh;
+    border: 2px solid #2070cf ;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+select{
+    height: 20px;
+}
+.btn{
+    width: 80px;
+    height: 40px;
+    margin-top: 7px;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #d1d1d1;
+}
+
+.block1, .block2, .block3,
+.block4, .block5, .block6, 
+.block7, .block8, .block9{
+    display: inline-block;
+    width: 33%;
+    height: 300px;
+    background-color: aqua;
+    margin: -3px -2px 3px -3px;
+    /* border: 1px solid yellow; */
+}
+
+.karnataka_map_tiles > .block12, .block22, .block32,
+.block42, .block52, .block62, 
+.block72, .block82, .block92{
+    display: inline-block;
+    width: 33%;
+    height: 300px;
+    background-color: aqua;
+    margin: -3px -2px 3px -3px;
+    border: 1px solid yellow;
+}
+
+/*Drop Down*/
+
+.dropbtn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 0px 20px 0 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #f8f8f8;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+/*End Drop Down*/
+
+a{
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+a:hover{
+    color: #fff;
+}

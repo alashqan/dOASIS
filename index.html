@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="images/R.png">
+</head>
+
+<body>
+    <!--Main Header-->
+    <h1>
+        <img src="images/logo.png" alt="logo" width="220">
+    </h1>
+    <b><p>Decentralized & Organized Archiving System for Information Storage </p></b>
+
+    <!--Blue Line Bar-->
+    <div class="topbar"></div>
+
+    <div class="main">
+
+    <!--Left Side Navigation Bar-->
+    <div class="content" style="background-color: #d3dae2;">
+        
+        <div class="locations selectbar">
+        <b><label for="state">Select the data you want to view.</label></b>
+        <br><br>
+        <b>Select Location: </b>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">India</i></button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#karnataka" onclick="view_button()">Karnataka</a>
+              <a href="#mumbai" onclick="view_mumbai()">Mumbai</a>
+              <a href="#karwar" onclick="view_karwar()">Karwar</a>
+              <a href="#murdeshwar" onclick="view_murdeshwar()">Murdeshwar</a>
+              <a href="#adyar" onclick="view_adyar()">Adyar</a>
+            </div>
+        </div>
+        <!-- <p id="message"></p> -->
+        
+        <div class="button" id="button" style="display: none;">
+            <p style="text-align: left; padding: 5px 10px ;">You have selected <b>Karnataka</b>.</p>
+            <p style="text-align: left; padding: 10px 10px 5px 10px;">Choose the map form</p>
+            <button class="btn btn-primary btn-sm" onclick="view_karnataka()">Cartosat</button>
+            <button class="btn btn-primary btn-sm" onclick="view_karnataka_tiles()">Tiles</button>
+            <button id="download" class="btn btn-primary btn-sm" style="display: none; float: right;"><a href="./C1_DEM_16B_2006-2008_v1_75E13N_d43p.zip" download>Download</a></button>
+        </div>
+        </div>  
+
+    </div>
+
+    <!--Right Side Map Display Portion-->
+    <div class="display" id="front_image" > 
+         <!-- Start right side display section -->
+
+        <!--Start right side front image section-->
+        <div class="block1">
+            <img src="https://ipfs.io/ipfs/QmNeLTLt2ubukFNrBQZZKF1QXCj64BpdNKKwibZwhyRfNC?filename=row-1-column-1.png" alt="row-1-column-1" height="100%" width="100%">
+        </div>
+        <div class="block2">
+            <img src="https://ipfs.io/ipfs/QmV3qCiG23yScKFQDRXKtogHMjhz8xzTviS9s6RXwmandQ?filename=row-1-column-2.png" alt="row-1-column-2" height="100%" width="100%">
+        </div>
+        <div class="block3">
+            <img src="https://ipfs.io/ipfs/QmQhZBsFJDuXyxTmvfP4gstzGFjb5VuXkLZ3S2rFPwPLWh?filename=row-1-column-3.png" alt="row-1-column-3" height="100%" width="100%">
+        </div>
+        <div class="block4">
+            <img src="https://ipfs.io/ipfs/QmRztz66Z5Te3vbHsSWxhjxs4zCBWnreYVdJL6zcFzGPYR?filename=row-2-column-1.png" alt="row-2-column-1" height="100%" width="100%">
+        </div>
+        <div class="block5">
+            <img src="https://ipfs.io/ipfs/QmaA1EDEzji98RG1PGgTaCcWYUNLeF9Urospc5EpadFo9r?filename=row-2-column-2.png" alt="row-2-column-2" height="100%" width="100%">
+        </div>
+        <div class="block6">
+            <img src="https://ipfs.io/ipfs/QmRSWR7Hito3HayDJEkXunPzt7DTBdKHqWQQF5mQWqjv8w?filename=row-2-column-3.png" alt="row-2-column-3" height="100%" width="100%">
+        </div>
+        <div class="block7">
+            <img src="https://ipfs.io/ipfs/QmanNAi1zYGP3q8FtQmxfywQzq4q4GFbZvY1j4VX3UZcJL?filename=row-3-column-1.png" alt="row-3-column-1" height="100%" width="100%">
+        </div>
+        <div class="block8">
+            <img src="https://ipfs.io/ipfs/Qmc3F6ZmgUafNuUpv6WrUUuLm4DFDXzHgQJCRHvbMmxCLz?filename=row-3-column-2.png" alt="row-3-column-2" height="100%" width="100%">
+        </div>
+        <div class="block9">
+            <img src="https://ipfs.io/ipfs/QmQWiEvxbRrC2pbfTiUXRsY4XDLuHhK49QqSQgLzN5svkX?filename=row-3-column-3.png" alt="row-3-column-3" height="100%" width="100%"> 
+        </div> 
+        </div>
+        <!--End right side front image section-->
+
+        <!--Start karnataka_map-->
+        <div class="karnataka_map" id="karnataka_map" style="display: none; width: 70%; height: 100%;"> 
+            <div class="block1">
+                <img src="https://ipfs.io/ipfs/QmT2XcPkNi6eH1ohSTbz6nGfbayBn1tHF3b66tyQgvpzSG?filename=row-1-column-1.png" alt="row-1-column-1" height="100%" width="100%">
+            </div>
+            <div class="block2">
+                <img src="https://ipfs.io/ipfs/QmTZn94A999Qcknw8QnbHY7MEWMD7wV1M8LbndV1jXJX6w?filename=row-1-column-2.png" alt="ow-1-column-2" height="100%" width="100%">
+            </div>
+            <div class="block3">
+                <img src="https://ipfs.io/ipfs/QmbFjEExj3yeb3Q4GqJuzPRjKz464J2S4zKdw3CL9UNzvA?filename=row-1-column-3.png" alt="row-1-column-3" height="100%" width="100%">
+            </div>
+            <div class="block4">
+                <img src="https://ipfs.io/ipfs/QmUhveXmGkU4wViUzthnNm1viHLACNpvXKfi4Ru9KZBbd8?filename=row-2-column-1.png" alt="row-2-column-1" height="100%" width="100%">
+            </div>
+            <div class="block5">
+                <img src="https://ipfs.io/ipfs/QmQ1WtPVNktuQv2FJmyRJQSysJPZhhGTvbcRZUdffMH1qD?filename=row-2-column-2.png" alt="row-2-column-2" height="100%" width="100%">
+            </div>
+            <div class="block6">
+                <img src="https://ipfs.io/ipfs/QmX9EyevCE9H5NRB6dCFLGNqtbhP34LkWDvtGkd6jM72jf?filename=row-2-column-3.png" alt="row-2-column-3" height="100%" width="100%">
+            </div>
+            <div class="block7">
+                <img src="https://ipfs.io/ipfs/QmVnqsmZLK4wVVmrLnSTZ9tiCKEivDhjykzmSy72eY5QGG?filename=row-3-column-1.png" alt="row-3-column-1" height="100%" width="100%">
+            </div>
+            <div class="block8">
+                <img src="https://ipfs.io/ipfs/QmYwrZ75w1s6NwfDGBMGxrG56y5teBjd45zYRqmK6weU6Q?filename=row-3-column-2.png" alt="row-3-column-2" height="100%" width="100%">
+            </div>
+            <div class="block9">
+                <img src="https://ipfs.io/ipfs/QmbRoXR5iRaDdmD5TAHVS8bYCEkxtJCsqPW9AuPU5reARs?filename=row-3-column-3.png" alt="row-3-column-3" height="100%" width="100%"> 
+            </div>
+        </div>  
+        <!-- End karnataka_map -->
+
+        <!-- Start karnataka_map_tiles-->
+        <div class="karnataka_map_tiles" id="karnataka_map_tiles" style="display: none; width: 70%; height: 100%;"> 
+            <div class="block12">
+                <img src="https://ipfs.io/ipfs/QmT2XcPkNi6eH1ohSTbz6nGfbayBn1tHF3b66tyQgvpzSG?filename=row-1-column-1.png" alt="row-1-column-1" height="100%" width="100%">
+            </div>
+            <div class="block22">
+                <img src="https://ipfs.io/ipfs/QmTZn94A999Qcknw8QnbHY7MEWMD7wV1M8LbndV1jXJX6w?filename=row-1-column-2.png" alt="ow-1-column-2" height="100%" width="100%">
+            </div>
+            <div class="block32">
+                <img src="https://ipfs.io/ipfs/QmbFjEExj3yeb3Q4GqJuzPRjKz464J2S4zKdw3CL9UNzvA?filename=row-1-column-3.png" alt="row-1-column-3" height="100%" width="100%">
+            </div>
+            <div class="block42">
+                <img src="https://ipfs.io/ipfs/QmUhveXmGkU4wViUzthnNm1viHLACNpvXKfi4Ru9KZBbd8?filename=row-2-column-1.png" alt="row-2-column-1" height="100%" width="100%">
+            </div>
+            <div class="block52"  onclick="view_download()">
+                <img src="https://ipfs.io/ipfs/QmQ1WtPVNktuQv2FJmyRJQSysJPZhhGTvbcRZUdffMH1qD?filename=row-2-column-2.png" alt="row-2-column-2" height="100%" width="100%">
+            </div>
+            <div class="block62">
+                <img src="https://ipfs.io/ipfs/QmX9EyevCE9H5NRB6dCFLGNqtbhP34LkWDvtGkd6jM72jf?filename=row-2-column-3.png" alt="row-2-column-3" height="100%" width="100%">
+            </div>
+            <div class="block72">
+                <img src="https://ipfs.io/ipfs/QmVnqsmZLK4wVVmrLnSTZ9tiCKEivDhjykzmSy72eY5QGG?filename=row-3-column-1.png" alt="row-3-column-1" height="100%" width="100%">
+            </div>
+            <div class="block82">
+                <img src="https://ipfs.io/ipfs/QmYwrZ75w1s6NwfDGBMGxrG56y5teBjd45zYRqmK6weU6Q?filename=row-3-column-2.png" alt="row-3-column-2" height="100%" width="100%">
+            </div>
+            <div class="block92">
+                <img src="https://ipfs.io/ipfs/QmbRoXR5iRaDdmD5TAHVS8bYCEkxtJCsqPW9AuPU5reARs?filename=row-3-column-3.png" alt="row-3-column-3" height="100%" width="100%"> 
+            </div>
+        </div>  
+        <!-- End karnataka_map_tiles -->
+
+        <div id="mumbai" class="mumbai" style="display: none;">
+        <img src="https://ipfs.io/ipfs/QmTmiqh52gkVPoGd2rdFBJpgcoVDEQX3q3R7qqZhaFpRz4?filename=mumbai.jpeg" alt="mumbai map" height="100%" width="100%">
+        </div>
+
+        <div id="mangalore" style="display: none;">
+        <img src="https://ipfs.io/ipfs/Qma3upVSiSgbZCPrTNhS2GTgRH2akvQ9aK7YgkTJGpLvHx?filename=mangalore.jpeg" alt="mangalore map" height="100%" width="100%">
+        </div>
+
+        <div id="karwar" style="display: none;">
+        <img src="https://ipfs.io/ipfs/QmQv7PMf1wAAm2cqJz47UN6sUcFgnn3U48HNauKYbwE7Wi?filename=karwar.jpeg" alt="karwar map" height="100%" width="100%">
+        </div>
+
+        <div id="murdeshwar" style="display: none;">
+        <img src="https://ipfs.io/ipfs/Qmesh2EFEFP9ttuSSYGokJxhjgQJPDuQ5voJpiQb8QB1BP?filename=Murdeshwar.jpeg" alt="murdeshwar map" height="100%" width="100%">
+        </div>
+
+        <div id="adyar" style="display: none;">
+        <img src="https://ipfs.io/ipfs/QmU99EHpzRudKmhftzoYe7gZGtfphUvhQhcJ36zCiYGwoZ?filename=adyar.jpeg" alt="adyar map" height="100%" width="100%">
+        </div>
+    </div> <!--End right side display section-->
+
+</div>
+
+<script src="index.js">
+
+</script>
+</body>
+</html>
